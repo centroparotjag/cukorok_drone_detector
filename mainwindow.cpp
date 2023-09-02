@@ -57,6 +57,7 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
             serial -> setStopBits(QSerialPort::OneStop);
             serial -> setFlowControl(QSerialPort::NoFlowControl);
 
+
             if (serial -> open(QIODevice::ReadWrite) ){    // відкриваєм порт або перевіряєм його зайнятість
                 qDebug() << "Під'єднано";
                 ui -> pushButton   -> setText("Від'єднати");
@@ -66,7 +67,6 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
                 ui -> comboBox     -> colorCount();
             }
             connect(serial, SIGNAL(readyRead()), this, SLOT(serialRecieve()));
-            serial -> write("settings;");
             status_connect_com = 1;
         }
         else {
@@ -81,5 +81,97 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
 }
 
 
+void MainWindow::on_pushButton_8_clicked()
+{
+    serial -> write("status;");
+}
 
+void MainWindow::on_pushButton_12_clicked()
+{
+    serial -> write("restart;");
+}
 
+void MainWindow::on_pushButton_6_clicked()
+{
+    serial -> write("verbose 1;");
+}
+
+void MainWindow::on_pushButton_14_clicked()
+{
+    serial -> write("verbose 0;");
+}
+
+void MainWindow::on_pushButton_18_clicked()
+{
+    serial -> write("tracking enable;");
+}
+
+void MainWindow::on_pushButton_16_clicked()
+{
+    serial -> write("tracking disable;");
+}
+
+//test alarm <вид сигналізації orlan, eleron, rssi, tracking>
+void MainWindow::on_pushButton_7_clicked()
+{
+    serial -> write("test alarm orlan;");
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    serial -> write("test alarm eleron;");
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    serial -> write("test alarm rssi;");
+}
+
+void MainWindow::on_pushButton_17_clicked()
+{
+    serial -> write("test alarm tracking;");
+}
+
+void MainWindow::on_pushButton_13_clicked()
+{
+    serial -> write("update;"); //Оновити прошивку, якщо є новіша.
+}
+
+void MainWindow::on_pushButton_15_clicked()
+{
+    serial -> write("upload captures;"); //Завантажити накопичені сигнатури на мій сервер для аналізу.
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    QString ssid = ui->lineEdit->text();
+    QString pass = ui->lineEdit_2->text();
+    QByteArray ba = "wifi client connect ";
+    ba.append(ssid + " " + pass + ";");
+    serial -> write(ba);
+
+    qDebug()<< ba;
+}
+
+void MainWindow::on_pushButton_19_clicked()
+{
+    serial -> write("wifi client disconnect;");
+}
+
+void MainWindow::on_pushButton_20_clicked()
+{
+    serial -> write("update;");
+}
+
+void MainWindow::on_pushButton_21_clicked()
+{
+    serial -> write("settings;");
+}
+
+void MainWindow::on_pushButton_22_clicked()
+{
+    QString qs = ui->lineEdit_15->text();
+    QByteArray ba=0;
+    ba += qs;
+    serial -> write(ba);
+}
