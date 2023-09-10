@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui -> groupBox_4 -> setEnabled(0);          // конфігурація відключений
     ui -> groupBox_9 -> setEnabled(0);          // команда (comboBox_2) відключений
     ui -> groupBox_10 -> setEnabled(0);         // WI-FI термінал відключений
-    ui->textBrowser->setStyleSheet("background: black");
+    ui->textBrowser->setStyleSheet("background-color: rgb(4,13,135)");
     ui->textBrowser->setFontPointSize(10);
     on_pushButton_5_clicked();                  // refresh com ports
 }
@@ -102,6 +102,8 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
             ui -> groupBox_9 -> setEnabled(0);          // список команд відключений
             ui -> groupBox_10 -> setEnabled(0);         // відключений
             status_connect_com = 0;
+            ui->textBrowser->setTextColor(QColor(255, 255, 0));
+            ui -> textBrowser -> append("Відключено від: " + ui->comboBox->currentText() + "\n");
         }
 }
 
