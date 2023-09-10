@@ -6,9 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1006</width>
-    <height>800</height>
+    <width>1000</width>
+    <height>740</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>740</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>740</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>1000</width>
+    <height>740</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -20,7 +38,7 @@
       <x>480</x>
       <y>30</y>
       <width>501</width>
-      <height>651</height>
+      <height>641</height>
      </rect>
     </property>
    </widget>
@@ -29,8 +47,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>141</width>
-      <height>141</height>
+      <width>451</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="title">
@@ -39,9 +57,9 @@
     <widget class="QComboBox" name="comboBox">
      <property name="geometry">
       <rect>
-       <x>13</x>
+       <x>11</x>
        <y>20</y>
-       <width>111</width>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
@@ -54,10 +72,10 @@
     <widget class="QPushButton" name="pushButton_5">
      <property name="geometry">
       <rect>
-       <x>13</x>
-       <y>54</y>
-       <width>111</width>
-       <height>41</height>
+       <x>148</x>
+       <y>20</y>
+       <width>151</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -67,10 +85,10 @@
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>13</x>
-       <y>96</y>
-       <width>111</width>
-       <height>41</height>
+       <x>304</x>
+       <y>20</y>
+       <width>141</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -84,7 +102,7 @@
       <x>470</x>
       <y>10</y>
       <width>521</width>
-      <height>681</height>
+      <height>671</height>
      </rect>
     </property>
     <property name="title">
@@ -95,9 +113,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>190</y>
+      <y>200</y>
       <width>451</width>
-      <height>366</height>
+      <height>351</height>
      </rect>
     </property>
     <property name="title">
@@ -106,10 +124,10 @@
     <widget class="QPushButton" name="pushButton_4">
      <property name="geometry">
       <rect>
-       <x>307</x>
+       <x>304</x>
        <y>20</y>
        <width>141</width>
-       <height>41</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -122,7 +140,7 @@
        <x>152</x>
        <y>20</y>
        <width>150</width>
-       <height>41</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -265,7 +283,7 @@
        <x>10</x>
        <y>203</y>
        <width>71</width>
-       <height>151</height>
+       <height>141</height>
       </rect>
      </property>
      <property name="title">
@@ -274,9 +292,9 @@
      <widget class="QLineEdit" name="lineEdit_9">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>8</x>
         <y>20</y>
-        <width>51</width>
+        <width>54</width>
         <height>22</height>
        </rect>
       </property>
@@ -287,9 +305,9 @@
      <widget class="QLineEdit" name="lineEdit_10">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>8</x>
         <y>50</y>
-        <width>51</width>
+        <width>54</width>
         <height>22</height>
        </rect>
       </property>
@@ -300,9 +318,9 @@
      <widget class="QLineEdit" name="lineEdit_11">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>8</x>
         <y>80</y>
-        <width>51</width>
+        <width>54</width>
         <height>22</height>
        </rect>
       </property>
@@ -313,9 +331,9 @@
      <widget class="QLineEdit" name="lineEdit_12">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>8</x>
         <y>110</y>
-        <width>51</width>
+        <width>54</width>
         <height>22</height>
        </rect>
       </property>
@@ -341,8 +359,8 @@
        <rect>
         <x>50</x>
         <y>20</y>
-        <width>31</width>
-        <height>22</height>
+        <width>32</width>
+        <height>23</height>
        </rect>
       </property>
       <property name="text">
@@ -367,8 +385,8 @@
        <rect>
         <x>50</x>
         <y>20</y>
-        <width>31</width>
-        <height>22</height>
+        <width>32</width>
+        <height>23</height>
        </rect>
       </property>
       <property name="text">
@@ -379,10 +397,10 @@
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>8</x>
        <y>20</y>
        <width>141</width>
-       <height>41</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -390,180 +408,11 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
-    <property name="geometry">
-     <rect>
-      <x>263</x>
-      <y>20</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>інф. в лог вкл.</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_7">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>123</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>тест orlan</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_9">
-    <property name="geometry">
-     <rect>
-      <x>261</x>
-      <y>124</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>тест eleron</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_11">
-    <property name="geometry">
-     <rect>
-      <x>368</x>
-      <y>124</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>тест rssi</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_14">
-    <property name="geometry">
-     <rect>
-      <x>263</x>
-      <y>54</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>інф в лог викл.</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_13">
-    <property name="geometry">
-     <rect>
-      <x>262</x>
-      <y>89</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>update</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_15">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>89</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>upload captur.</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_10">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>590</y>
-      <width>121</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>WI-FI з'єднати</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_19">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>620</y>
-      <width>121</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>WI-FI від'єднати</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>195</x>
-      <y>593</y>
-      <width>41</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>SSID:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>238</x>
-      <y>590</y>
-      <width>211</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>STARLINK</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>195</x>
-      <y>624</y>
-      <width>41</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PASS:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>238</x>
-      <y>620</y>
-      <width>211</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>560</y>
+      <y>552</y>
       <width>451</width>
       <height>131</height>
      </rect>
@@ -584,144 +433,241 @@
       <string>ОНОВИТИСЬ</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>WI-FI з'єднати</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_19">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>121</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>WI-FI від'єднати</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>60</y>
+       <width>211</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>20</y>
+       <width>211</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>STARLINK</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>60</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PASS:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>20</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SSID:</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
-    <property name="geometry">
-     <rect>
-      <x>158</x>
-      <y>20</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>status </string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_16">
-    <property name="geometry">
-     <rect>
-      <x>368</x>
-      <y>52</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>трекінг викл.</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_18">
-    <property name="geometry">
-     <rect>
-      <x>369</x>
-      <y>20</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>трекінг вкл.</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_17">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>160</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>тест tracking</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_21">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>53</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>settings</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_22">
+   <widget class="QGroupBox" name="groupBox_10">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>705</y>
-      <width>141</width>
-      <height>31</height>
+      <y>138</y>
+      <width>451</width>
+      <height>61</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Відправка команди</string>
+    <property name="title">
+     <string>Термінал</string>
     </property>
+    <widget class="QPushButton" name="pushButton_22">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Відправка </string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_15">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>20</y>
+       <width>331</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>status;</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_15">
+   <widget class="QGroupBox" name="groupBox_9">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>706</y>
-      <width>821</width>
-      <height>31</height>
+      <x>10</x>
+      <y>74</y>
+      <width>151</width>
+      <height>61</height>
      </rect>
     </property>
-    <property name="text">
-     <string>status;</string>
+    <property name="title">
+     <string>Команда</string>
     </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_12">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>89</y>
-      <width>95</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>restart</string>
-    </property>
+    <widget class="QComboBox" name="comboBox_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>status;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>settings;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>restart;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>wifi client scan;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>update;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>upload captures;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>verbose 1;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>verbose 0;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>tracking enable;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>tracking disable;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dji 1;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dji 0;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>test alarm orlan;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>test alarm eleron;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>test alarm rssi;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>test alarm tracking;</string>
+      </property>
+     </item>
+    </widget>
    </widget>
    <zorder>groupBox_2</zorder>
    <zorder>groupBox_4</zorder>
    <zorder>groupBox_3</zorder>
    <zorder>groupBox</zorder>
    <zorder>textBrowser</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>pushButton_7</zorder>
-   <zorder>pushButton_9</zorder>
-   <zorder>pushButton_11</zorder>
-   <zorder>pushButton_14</zorder>
-   <zorder>pushButton_13</zorder>
-   <zorder>pushButton_15</zorder>
-   <zorder>pushButton_10</zorder>
-   <zorder>pushButton_19</zorder>
-   <zorder>label</zorder>
-   <zorder>lineEdit</zorder>
-   <zorder>label_2</zorder>
-   <zorder>lineEdit_2</zorder>
-   <zorder>pushButton_8</zorder>
-   <zorder>pushButton_16</zorder>
-   <zorder>pushButton_18</zorder>
-   <zorder>pushButton_17</zorder>
-   <zorder>pushButton_21</zorder>
-   <zorder>pushButton_22</zorder>
-   <zorder>lineEdit_15</zorder>
-   <zorder>pushButton_12</zorder>
+   <zorder>groupBox_10</zorder>
+   <zorder>groupBox_9</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1006</width>
+     <width>1000</width>
      <height>26</height>
     </rect>
    </property>
