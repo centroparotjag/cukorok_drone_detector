@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->textBrowser->setFontPointSize(14);
+    ui->textBrowser->setFontPointSize(10);
     ui->textBrowser->setTextColor(QColor(255, 0, 0));
     ui -> textBrowser -> append("https://bit.ly/dsc042");
 
