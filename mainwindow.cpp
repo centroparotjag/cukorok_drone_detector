@@ -10,6 +10,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ui->textBrowser->setFontPointSize(14);
+    ui->textBrowser->setTextColor(QColor(255, 0, 0));
+    ui -> textBrowser -> append("https://bit.ly/dsc042");
+
     ui -> pushButton -> setText("З'єднати");
     //ui -> comboBox_2 -> setEnabled(0);        // відключений
     ui -> groupBox_2 -> setEnabled(0);          // відключений
