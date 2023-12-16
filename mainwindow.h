@@ -37,6 +37,18 @@ private slots:
 
     void on_pushButton_20_clicked();
 
+    void on_pushButton_2_clicked();
+
+
+public:
+    int serial_data_parser(QByteArray data);
+    int detect_data(QByteArray data, QByteArray find);
+    QByteArray parse_settings(QByteArray data, QByteArray find);
+    int freq_ranges_parser(QByteArray data);
+    int num_parser(QByteArray data, int* i);
+    int keyword_search(QByteArray data, QByteArray keyword);
+    int dji_parser(QByteArray data);
+
 private:
     Ui::MainWindow *ui;
     QSerialPort *serial;

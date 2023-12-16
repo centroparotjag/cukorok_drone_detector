@@ -39,6 +39,7 @@ void MainWindow::serialRecieve(){
     ba = serial -> readAll();
     ui->textBrowser->setTextColor(QColor(0, 255, 0));
     ui -> textBrowser -> append(ba);
+    serial_data_parser(ba);
 }
 
 
@@ -85,6 +86,7 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
                 ui -> groupBox_2 -> setEnabled(1);          // включений
                 //ui -> groupBox_4 -> setEnabled(1);          // включений
                 ui -> groupBox_9 -> setEnabled(1);          // список команд включений
+                ui -> groupBox_4 -> setEnabled(1);
                 ui -> groupBox_10 -> setEnabled(1);         // включений
                 ui -> comboBox     -> colorCount();
 
@@ -212,3 +214,8 @@ void MainWindow::on_comboBox_2_activated(const QString &arg1)
 }
 
 
+//------------ read config -----------------
+void MainWindow::on_pushButton_2_clicked()
+{
+    serial -> write("settings;");
+}

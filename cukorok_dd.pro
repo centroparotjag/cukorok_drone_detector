@@ -13,7 +13,8 @@ QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    parser.cpp
 
 HEADERS += \
     mainwindow.h
