@@ -5,11 +5,16 @@
 
 int status_connect_com = 0;
 
+
+QString version ="V1.0.0";
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle(version);
 
     ui->textBrowser->setFontPointSize(10);
     ui->textBrowser->setTextColor(QColor(255, 0, 0));
@@ -21,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui -> groupBox_4 -> setEnabled(0);          // конфігурація відключений
     ui -> groupBox_9 -> setEnabled(0);          // команда (comboBox_2) відключений
     ui -> groupBox_10 -> setEnabled(0);         // WI-FI термінал відключений
+    ui -> pushButton_4 -> setEnabled(0);
     ui->textBrowser->setStyleSheet("background-color: rgb(4,13,135)");
     ui->textBrowser->setFontPointSize(10);
     on_pushButton_5_clicked();                  // refresh com ports
@@ -87,6 +93,7 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
                 //ui -> groupBox_4 -> setEnabled(1);          // включений
                 ui -> groupBox_9 -> setEnabled(1);          // список команд включений
                 ui -> groupBox_4 -> setEnabled(1);
+                ui -> pushButton_4 -> setEnabled(1);
                 ui -> groupBox_10 -> setEnabled(1);         // включений
                 ui -> comboBox     -> colorCount();
 
@@ -106,6 +113,7 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
             ui -> comboBox -> setEnabled(1);            // список компортів включений
             ui -> groupBox_2 -> setEnabled(0);          // відключений
             ui -> groupBox_4 -> setEnabled(0);          // відключений
+            ui -> pushButton_4 -> setEnabled(0);
             ui -> groupBox_9 -> setEnabled(0);          // список команд відключений
             ui -> groupBox_10 -> setEnabled(0);         // відключений
             status_connect_com = 0;
@@ -156,7 +164,7 @@ void MainWindow::on_pushButton_22_clicked()   // write data from terminal
 
 
 //------------------- combo box comands --------------------------
-void MainWindow::on_comboBox_2_activated(const QString &arg1)
+void MainWindow::on_comboBox_2_activated(void)
 {
     ui->textBrowser->setTextColor(QColor(255, 0, 0));
     ui -> textBrowser -> append("-->> " + ui-> comboBox_2 -> currentText());
@@ -219,3 +227,29 @@ void MainWindow::on_pushButton_2_clicked()
 {
     serial -> write("settings;");
 }
+
+//------------- restore default -------------
+void MainWindow::on_pushButton_4_clicked()
+{
+    serial -> write("reset settings;");
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    if(!freq_ranges[0] && !freq_ranges[1] && !freq_ranges[2] && !freq_ranges[3] && !freq_ranges[4] && !freq_ranges[5] &&
+       !bitrates[0] && !bitrates[0] && !bitrates[0] && !bitrates[0])
+    {
+        ui->textBrowser->setTextColor(QColor(255, 0, 0));
+        ui -> textBrowser -> append("Error writing settings!\nData fields are empty.\n"
+                                    "Fill in the settings fields or read the settings...\n");
+    }
+    else {
+        freq_write();
+        mode_write();
+        function_write();
+        rssi_treshold_write();
+        bit_rates_write();
+    }
+}
+
+

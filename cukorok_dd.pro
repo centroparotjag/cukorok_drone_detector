@@ -14,13 +14,16 @@ QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    parser.cpp
+    parser.cpp \
+    write_settings.cpp
 
 HEADERS += \
     mainwindow.h
 
 FORMS += \
     mainwindow.ui
+
+RC_FILE = appIcon.rc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
