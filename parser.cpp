@@ -23,16 +23,6 @@ int MainWindow::detect_data(QByteArray data, QByteArray find){
     return 0;
 }
 
-
-//int current_mode = 0;
-//int freq_ranges[6] = {0};
-//int rssi_threshold = 0;
-//int tracking = 0;
-//int bitrates[4] = {0};
-//int spreading_factors[4] = {0};
-//int dji_enable = 0;
-//int rssi_scan_thr = 0;
-
 QByteArray MainWindow::parse_settings(QByteArray data, QByteArray find){
     int num = 0;
     int i = 0;
@@ -131,6 +121,23 @@ int MainWindow::dji_parser(QByteArray data){
     return num_parser(data, &i);
 }
 
+QString MainWindow::access_point_WIFI_parser(QByteArray data){
+    QByteArray buf = 0;
+    int k = 0;
+
+    if (data[0]=='1' && data[1]==':' && data[2]==' '){
+        for (int i=3; i<64 ; i++ ) {
+             if (data[i] != ' ' ){
+                 buf[k] = data[i];
+                 k++;
+             }
+             else {
+                 break;
+             }
+        }
+    }
+    return buf;
+}
 
 int MainWindow::rssi_scan_threshold(QByteArray data){
     int i = 0;
@@ -147,7 +154,6 @@ void MainWindow::serial_data_parser(QByteArray data){
     if(detect_data(data, "current_mode") || detect_data(data, "tracking") || detect_data(data, "spreading_factors")||
             detect_data(data, "DJI:") || detect_data(data, "scan")){
         big_data.append(data);
-
     }
 
     if ( detect_data(data, "spreading_factors")){       // find_num == 3 &&
@@ -156,6 +162,8 @@ void MainWindow::serial_data_parser(QByteArray data){
         rssi_threshold = parse_settings(big_data, "rssi_threshold=").toInt(&ok, 10);
         tracking       = parse_settings(big_data, "tracking=").toInt(&ok, 10);
         freq_ranges_parser(big_data);
+        ui->textEdit->setTextColor(QColor(255, 125, 125));
+        ui -> textEdit -> insertPlainText("-->> dji;\n");
         serial -> write("dji;");
     }
 
@@ -163,22 +171,17 @@ void MainWindow::serial_data_parser(QByteArray data){
     if (detect_data(data, "scan")){
         dji_enable = dji_parser(big_data);
         big_data = 0;
-        qDebug() << current_mode << " " << tracking << " " << dji_enable << " " << dji_enable;
+        //qDebug() << current_mode << " " << tracking << " " << dji_enable << " " << dji_enable;
         view_data_setting ();
     }
 
-    //-----------------------------------------------------------------
+    //-----------Searching for a WIFI access point ---------------
+    if (detect_data(data, "1: ")){
+        dji_enable = dji_parser(big_data);
+        QString buf = access_point_WIFI_parser(data);
+        ui->lineEdit->setText(buf);
+    }
 }
-//int current_mode = 0;
-//int freq_ranges[6] = {0};
-//int rssi_threshold = 0;
-//int tracking = 0;
-//int bitrates[4] = {0};
-//int spreading_factors[4] = {0};
-//int dji_enable = 0;
-//int rssi_scan_thr = 0;
-
-
 
 void MainWindow::view_data_setting (void){
     //-------------- visible frequency ----------------------
@@ -261,7 +264,6 @@ void MainWindow::view_data_setting (void){
             break;
        // default:
     }
-
 }
 
 

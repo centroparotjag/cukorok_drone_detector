@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1050</width>
+    <width>1150</width>
     <height>740</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1050</width>
+    <width>1150</width>
     <height>740</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1050</width>
+    <width>1150</width>
     <height>740</height>
    </size>
   </property>
@@ -32,14 +32,35 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
       <x>480</x>
       <y>30</y>
-      <width>551</width>
+      <width>651</width>
       <height>641</height>
      </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="autoFormatting">
+     <set>QTextEdit::AutoNone</set>
+    </property>
+    <property name="undoRedoEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
@@ -101,7 +122,7 @@
      <rect>
       <x>470</x>
       <y>10</y>
-      <width>571</width>
+      <width>671</width>
       <height>671</height>
      </rect>
     </property>
@@ -814,7 +835,7 @@
    <zorder>groupBox_4</zorder>
    <zorder>groupBox_3</zorder>
    <zorder>groupBox</zorder>
-   <zorder>textBrowser</zorder>
+   <zorder>textEdit</zorder>
    <zorder>groupBox_10</zorder>
    <zorder>groupBox_9</zorder>
    <zorder>pushButton_4</zorder>
@@ -824,7 +845,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1050</width>
+     <width>1150</width>
      <height>26</height>
     </rect>
    </property>
