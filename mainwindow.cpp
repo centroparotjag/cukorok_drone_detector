@@ -15,10 +15,13 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle(version);
+    ui->menu->setTitle("Конфігуратор дрон детектора - \"Ванільний цукор\"");
 
     ui->textBrowser->setFontPointSize(10);
-    ui->textBrowser->setTextColor(QColor(255, 0, 0));
-    ui -> textBrowser -> append("https://bit.ly/dsc042");
+    ui->textBrowser->setTextColor(QColor(200, 200, 0));
+    ui -> textBrowser -> append("Сайт розробника дрон детектора:\nhttps://drone-spices.com/index.html\nhttps://bit.ly/dsc042");
+    ui->textBrowser->setTextColor(QColor(200, 200, 0));
+    ui -> textBrowser -> append("\nЗауваження і пропозиції по конфігуратору надсилайте за цією адресою: centroparotjag@gmail.com");
 
     ui -> pushButton -> setText("З'єднати");
     //ui -> comboBox_2 -> setEnabled(0);        // відключений
@@ -30,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textBrowser->setStyleSheet("background-color: rgb(4,13,135)");
     ui->textBrowser->setFontPointSize(10);
     on_pushButton_5_clicked();                  // refresh com ports
+
 }
 
 MainWindow::~MainWindow()
@@ -53,7 +57,7 @@ void MainWindow::on_pushButton_5_clicked()      // оновити доступн
 {
     ui -> comboBox -> clear();
     ui->textBrowser->setTextColor(QColor(102, 178, 255));
-    ui -> textBrowser -> append("\n-----------------------------------------");
+    ui -> textBrowser -> append("\n----------------------------------------------------------------------------------");
     ui -> textBrowser -> append("Доступні для підключення порти:");
 
     foreach(const QSerialPortInfo &info, QSerialPortInfo::availablePorts() ){
@@ -67,7 +71,7 @@ void MainWindow::on_pushButton_5_clicked()      // оновити доступн
             ui -> comboBox -> addItem(info.portName());
         }
     }
-    ui -> textBrowser -> append("-----------------------------------------\n");
+    ui -> textBrowser -> append("----------------------------------------------------------------------------------\n");
 }
 
 
@@ -99,6 +103,8 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
 
                 ui->textBrowser->setTextColor(QColor(255, 255, 0));
                 ui -> textBrowser -> append("Підключено до: " + ui->comboBox->currentText() + "\n");
+
+                view_data_setting ();
 
             }
             connect(serial, SIGNAL(readyRead()), this, SLOT(serialRecieve()));
@@ -253,3 +259,8 @@ void MainWindow::on_pushButton_3_clicked()
 }
 
 
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    serial -> write("wifi client scan;");
+}

@@ -139,7 +139,7 @@
       <rect>
        <x>10</x>
        <y>57</y>
-       <width>301</width>
+       <width>341</width>
        <height>121</height>
       </rect>
      </property>
@@ -151,18 +151,18 @@
        <rect>
         <x>10</x>
         <y>27</y>
-        <width>91</width>
+        <width>110</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>112</x>
+        <x>133</x>
         <y>27</y>
         <width>16</width>
         <height>16</height>
@@ -175,20 +175,20 @@
      <widget class="QLineEdit" name="lineEdit_f1">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>150</x>
         <y>27</y>
-        <width>91</width>
+        <width>110</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>112</x>
+        <x>133</x>
         <y>58</y>
         <width>16</width>
         <height>16</height>
@@ -201,14 +201,14 @@
      <widget class="QLineEdit" name="lineEdit_f3">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>150</x>
         <y>58</y>
-        <width>91</width>
+        <width>110</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_f2">
@@ -216,18 +216,18 @@
        <rect>
         <x>10</x>
         <y>58</y>
-        <width>91</width>
+        <width>110</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>112</x>
+        <x>133</x>
         <y>92</y>
         <width>10</width>
         <height>16</height>
@@ -240,14 +240,14 @@
      <widget class="QLineEdit" name="lineEdit_f5">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>150</x>
         <y>90</y>
-        <width>91</width>
+        <width>110</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_f4">
@@ -255,18 +255,18 @@
        <rect>
         <x>10</x>
         <y>90</y>
-        <width>91</width>
+        <width>110</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QCheckBox" name="checkBox_fe2">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>270</x>
         <y>60</y>
         <width>61</width>
         <height>20</height>
@@ -279,7 +279,7 @@
      <widget class="QCheckBox" name="checkBox_fe3">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>270</x>
         <y>90</y>
         <width>61</width>
         <height>20</height>
@@ -294,8 +294,8 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>186</y>
-       <width>141</width>
+       <y>185</y>
+       <width>181</width>
        <height>141</height>
       </rect>
      </property>
@@ -307,12 +307,12 @@
        <rect>
         <x>8</x>
         <y>20</y>
-        <width>54</width>
+        <width>91</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_br1">
@@ -320,12 +320,12 @@
        <rect>
         <x>8</x>
         <y>50</y>
-        <width>54</width>
+        <width>91</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_br2">
@@ -333,12 +333,12 @@
        <rect>
         <x>8</x>
         <y>80</y>
-        <width>54</width>
+        <width>91</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_br3">
@@ -346,18 +346,18 @@
        <rect>
         <x>8</x>
         <y>110</y>
-        <width>54</width>
+        <width>91</width>
         <height>22</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QCheckBox" name="checkBox_be3">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>110</x>
         <y>80</y>
         <width>61</width>
         <height>20</height>
@@ -370,7 +370,7 @@
      <widget class="QCheckBox" name="checkBox_be2">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>110</x>
         <y>50</y>
         <width>61</width>
         <height>20</height>
@@ -383,7 +383,7 @@
      <widget class="QCheckBox" name="checkBox_be4">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>110</x>
         <y>110</y>
         <width>61</width>
         <height>20</height>
@@ -397,8 +397,8 @@
     <widget class="QGroupBox" name="groupBox_7">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>187</y>
+       <x>200</x>
+       <y>185</y>
        <width>151</width>
        <height>51</height>
       </rect>
@@ -411,12 +411,12 @@
        <rect>
         <x>50</x>
         <y>20</y>
-        <width>32</width>
+        <width>41</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>0</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_6">
@@ -450,7 +450,7 @@
      <property name="geometry">
       <rect>
        <x>360</x>
-       <y>175</y>
+       <y>185</y>
        <width>81</width>
        <height>91</height>
       </rect>
@@ -491,7 +491,7 @@
        <x>360</x>
        <y>57</y>
        <width>81</width>
-       <height>111</height>
+       <height>121</height>
       </rect>
      </property>
      <property name="title">
@@ -501,7 +501,7 @@
       <property name="geometry">
        <rect>
         <x>6</x>
-        <y>80</y>
+        <y>90</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -514,7 +514,7 @@
       <property name="geometry">
        <rect>
         <x>6</x>
-        <y>50</y>
+        <y>60</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -527,7 +527,7 @@
       <property name="geometry">
        <rect>
         <x>6</x>
-        <y>20</y>
+        <y>30</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -553,21 +553,21 @@
     <widget class="QPushButton" name="pushButton_20">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>93</y>
-       <width>431</width>
+       <x>160</x>
+       <y>90</y>
+       <width>281</width>
        <height>28</height>
       </rect>
      </property>
      <property name="text">
-      <string>ОНОВИТИСЬ</string>
+      <string>ОНОВИТИ ПРОШИВКУ ДЕТЕКТОРА ДРОНІВ</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_10">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>20</y>
+       <y>55</y>
        <width>121</width>
        <height>28</height>
       </rect>
@@ -580,7 +580,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>60</y>
+       <y>90</y>
        <width>121</width>
        <height>28</height>
       </rect>
@@ -592,9 +592,9 @@
     <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>60</y>
-       <width>211</width>
+       <x>200</x>
+       <y>55</y>
+       <width>241</width>
        <height>22</height>
       </rect>
      </property>
@@ -605,21 +605,21 @@
     <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>200</x>
        <y>20</y>
-       <width>211</width>
+       <width>241</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
-      <string>STARLINK</string>
+      <string>GREBUBLIA</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>60</y>
+       <x>160</x>
+       <y>58</y>
        <width>41</width>
        <height>16</height>
       </rect>
@@ -631,14 +631,27 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>20</y>
+       <x>160</x>
+       <y>23</y>
        <width>41</width>
        <height>16</height>
       </rect>
      </property>
      <property name="text">
       <string>SSID:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_11">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>WI-FI сканувати</string>
      </property>
     </widget>
    </widget>
@@ -817,7 +830,7 @@
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>Дрон детектор Ванільний-Цукор</string>
+     <string>Конфігуратор дрон дектора &quot;Ванільний цукор&quot;</string>
     </property>
    </widget>
    <addaction name="menu"/>

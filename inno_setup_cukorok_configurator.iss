@@ -3,7 +3,7 @@
 
 #define MyAppName "Cukorok konfigurator"
 #define MyAppVersion "1.0.0"
-#define MyAppPublisher "centroparotjag"
+#define MyAppPublisher "centroparotjag@gmail.com"
 #define MyAppExeName "cukorok_dd.exe"
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".myp"

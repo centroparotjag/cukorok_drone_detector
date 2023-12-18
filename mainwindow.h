@@ -56,15 +56,17 @@ private slots:
 
     void on_checkBox_be4_clicked();
 
+    void on_pushButton_11_clicked();
+
 public:
 
-    int current_mode = 0;
-    int freq_ranges[6] = {0};
-    int rssi_threshold = 0;
+    int current_mode = 2;
+    int freq_ranges[6] = {860000000, 885000000, 895000000, 928000000, 970000000, 1020000000};
+    int rssi_threshold = 94;
     int tracking = 0;
-    int bitrates[4] = {0};
+    int bitrates[4] = {57600, 80000, 15235, 85100};
     int spreading_factors[4] = {0};
-    int dji_enable = 0;
+    int dji_enable = 1;
     int rssi_scan_thr = 0;
 
 
