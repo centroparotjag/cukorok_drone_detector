@@ -32,7 +32,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -60,7 +60,7 @@
      <bool>true</bool>
     </property>
     <property name="readOnly">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
@@ -831,11 +831,25 @@
      <string>Скинути на заводські налаштування !!!</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>30</y>
+      <width>651</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <zorder>label_7</zorder>
    <zorder>groupBox_2</zorder>
    <zorder>groupBox_4</zorder>
    <zorder>groupBox_3</zorder>
    <zorder>groupBox</zorder>
-   <zorder>textEdit</zorder>
+   <zorder>textBrowser</zorder>
    <zorder>groupBox_10</zorder>
    <zorder>groupBox_9</zorder>
    <zorder>pushButton_4</zorder>

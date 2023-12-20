@@ -85,6 +85,7 @@ public:
     void rssi_treshold_write(void);
     void bit_rates_write(void);
     QString access_point_WIFI_parser(QByteArray data);
+    void auto_scroll_down(void);
 
 private:
     Ui::MainWindow *ui;

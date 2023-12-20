@@ -56,8 +56,8 @@ void MainWindow::freq_write(void){
 
     //qDebug() << buffer;
 
-    ui->textEdit->setTextColor(QColor(255,125,125));
-    ui -> textEdit -> insertPlainText("-->>" + buffer + "\n");
+    ui->textBrowser->setTextColor(QColor(255,125,125));
+    ui -> textBrowser -> insertPlainText("-->>" + buffer + "\n");
 
     serial -> write(buffer);
 }
@@ -128,8 +128,8 @@ void MainWindow::bit_rates_write(void){
 
     buffer.append(";");
 
-    ui->textEdit->setTextColor(QColor(255,125,125));
-    ui -> textEdit -> insertPlainText("-->> " + buffer + "\n");
+    ui->textBrowser->setTextColor(QColor(255,125,125));
+    ui -> textBrowser -> insertPlainText("-->> " + buffer + "\n");
     //qDebug() << buffer;
     serial -> write(buffer);
 
@@ -153,42 +153,42 @@ void MainWindow::on_checkBox_fe3_clicked()
 
 void MainWindow::mode_write(void){
     if(ui->radioButton_normal->isChecked()){
-        ui->textEdit->setTextColor(QColor(255,125,125));
-        ui -> textEdit -> insertPlainText("-->> mode normal;\n");
+        ui->textBrowser->setTextColor(QColor(255,125,125));
+        ui -> textBrowser -> insertPlainText("-->> mode normal;\n");
         serial -> write("mode normal;");
     }
     if(ui->radioButton_rssi->isChecked()){
-        ui->textEdit->setTextColor(QColor(255,125,125));
-        ui -> textEdit -> insertPlainText("-->> mode rssi;\n");
+        ui->textBrowser->setTextColor(QColor(255,125,125));
+        ui -> textBrowser -> insertPlainText("-->> mode rssi;\n");
         serial -> write("mode rssi;");
     }
     if(ui->radioButton_sleep->isChecked()){
-        ui->textEdit->setTextColor(QColor(255,125,125));
-        ui -> textEdit -> insertPlainText("-->> mode sleep;\n");
+        ui->textBrowser->setTextColor(QColor(255,125,125));
+        ui -> textBrowser -> insertPlainText("-->> mode sleep;\n");
         serial -> write("mode sleep;");
     }
 }
 
 void MainWindow::function_write(void){
     if(ui->checkBox_DJI->isChecked()){
-        ui->textEdit->setTextColor(QColor(255,125,125));
-        ui -> textEdit -> insertPlainText("-->> dji 1;\n");
+        ui->textBrowser->setTextColor(QColor(255,125,125));
+        ui -> textBrowser -> insertPlainText("-->> dji 1;\n");
         serial -> write("dji 1;");
     }
     else {
-        ui->textEdit->setTextColor(QColor(255,125,125));
-        ui -> textEdit -> insertPlainText("-->> dji 0;\n");
+        ui->textBrowser->setTextColor(QColor(255,125,125));
+        ui -> textBrowser -> insertPlainText("-->> dji 0;\n");
         serial -> write("dji 0;");
     }
 
     if(ui->checkBox_Tracking->isChecked()){
-        ui->textEdit->setTextColor(QColor(255,125,125));
-        ui -> textEdit -> insertPlainText("-->> tracking 1;\n");
+        ui->textBrowser->setTextColor(QColor(255,125,125));
+        ui -> textBrowser -> insertPlainText("-->> tracking 1;\n");
         serial -> write("tracking 1;");
     }
     else {
-        ui->textEdit->setTextColor(QColor(255,125,125));
-        ui -> textEdit -> insertPlainText("-->> tracking 0;\n");
+        ui->textBrowser->setTextColor(QColor(255,125,125));
+        ui -> textBrowser -> insertPlainText("-->> tracking 0;\n");
         serial -> write("tracking 0;");
     }
 }
@@ -198,8 +198,8 @@ void MainWindow::rssi_treshold_write(void){
     QByteArray buffer = 0;
     rssi_threshold = ui->lineEdit_rssi_l->text().toInt();
     buffer.append("rssi threshold " + QString::number(rssi_threshold) + ";");
-    ui->textEdit->setTextColor(QColor(255,125,125));
-    ui -> textEdit -> insertPlainText("-->> " + buffer + "\n");
+    ui->textBrowser->setTextColor(QColor(255,125,125));
+    ui -> textBrowser -> insertPlainText("-->> " + buffer + "\n");
     serial -> write(buffer);
 }
 

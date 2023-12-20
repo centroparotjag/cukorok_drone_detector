@@ -162,8 +162,8 @@ void MainWindow::serial_data_parser(QByteArray data){
         rssi_threshold = parse_settings(big_data, "rssi_threshold=").toInt(&ok, 10);
         tracking       = parse_settings(big_data, "tracking=").toInt(&ok, 10);
         freq_ranges_parser(big_data);
-        ui->textEdit->setTextColor(QColor(255, 125, 125));
-        ui -> textEdit -> insertPlainText("-->> dji;\n");
+        ui->textBrowser->setTextColor(QColor(255, 125, 125));
+        ui -> textBrowser -> insertPlainText("-->> dji;\n");
         serial -> write("dji;");
     }
 
