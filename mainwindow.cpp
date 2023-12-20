@@ -25,9 +25,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     ui->textBrowser->setFontPointSize(10);
-    ui->textBrowser->setTextColor(QColor(200, 200, 0));
+    ui->textBrowser->setTextColor(QColor(255, 255, 0));
     ui -> textBrowser -> insertPlainText("Сайт розробника дрон детектора:\nhttps://drone-spices.com/index.html\nhttps://bit.ly/dsc042\n");
-    ui->textBrowser->setTextColor(QColor(200, 200, 0));
+    ui->textBrowser->setTextColor(QColor(255, 255, 0));
     ui -> textBrowser -> insertPlainText("\nЗауваження і пропозиції по конфігуратору надсилайте за цією адресою: centroparotjag@gmail.com");
 
     ui -> pushButton -> setText("З'єднати");
@@ -73,7 +73,7 @@ void MainWindow::serialRecieve(){
 void MainWindow::on_pushButton_5_clicked()      // оновити доступні com ports
 {
     ui -> comboBox -> clear();
-    ui->textBrowser->setTextColor(QColor(102, 178, 255));
+    ui->textBrowser->setTextColor(QColor(255, 255, 255));
     ui -> textBrowser -> insertPlainText("\n----------------------------------------------------------------------------------\n");
     ui -> textBrowser -> insertPlainText("Доступні для підключення порти:\n");
 
