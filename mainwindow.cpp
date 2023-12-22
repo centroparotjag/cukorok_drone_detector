@@ -5,7 +5,7 @@
 
 int status_connect_com = 0;
 
-QString version ="V1.0.2";
+QString version ="V1.0.3";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,10 +25,11 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     ui->textBrowser->setFontPointSize(10);
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     ui->textBrowser->setTextColor(QColor(255, 255, 0));
     ui -> textBrowser -> insertPlainText("Сайт розробника дрон детектора:\nhttps://drone-spices.com/index.html\nhttps://bit.ly/dsc042\n");
     ui->textBrowser->setTextColor(QColor(255, 255, 0));
-    ui -> textBrowser -> insertPlainText("\nЗауваження і пропозиції по конфігуратору надсилайте за цією адресою: centroparotjag@gmail.com");
+    ui -> textBrowser -> insertPlainText("\nЗауваження і пропозиції по конфігуратору надсилайте за цією адресою: centroparotjag@gmail.com\n");
 
     ui -> pushButton -> setText("З'єднати");
     //ui -> comboBox_2 -> setEnabled(0);        // відключений
@@ -42,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     on_pushButton_5_clicked();                  // refresh com ports
 
     //ui->textBrowser->QPixmap("/home/root/Downloads/img.jpg");
+    ui->radioButton_datim->setChecked(true);
 
 }
 
@@ -52,15 +54,29 @@ MainWindow::~MainWindow()
     delete serial;
 }
 
-
+QByteArray ba_all;
 void MainWindow::serialRecieve(){
     QByteArray ba;
     ba = serial -> readAll();
-    ui->textBrowser->setTextColor(QColor(0, 255, 0));
-    //ui -> textBrowser -> append(ba);
-    ui -> textBrowser -> insertPlainText(ba);
 
-    serial_data_parser(ba);
+    //ui -> textBrowser -> append(ba);
+
+    if( (int)ba[ba.size()-1] < 0x20 ){
+        ba_all += ba;
+        ui -> textBrowser -> insertPlainText(get_date_time ("full"));
+        ui->textBrowser->setTextColor(QColor(0, 255, 0));
+        ui -> textBrowser -> insertPlainText(ba_all);
+        serial_data_parser(ba_all);
+        ba_all = 0;
+    }
+    else{
+        ba_all += ba;
+    }
+
+
+//    ui -> textBrowser -> insertPlainText(ba);
+
+//    serial_data_parser(ba);
 
     //----------- auto scroll text -------------------
     QTextCursor cursor = ui->textBrowser->textCursor();
@@ -73,8 +89,10 @@ void MainWindow::serialRecieve(){
 void MainWindow::on_pushButton_5_clicked()      // оновити доступні com ports
 {
     ui -> comboBox -> clear();
-    ui->textBrowser->setTextColor(QColor(255, 255, 255));
-    ui -> textBrowser -> insertPlainText("\n----------------------------------------------------------------------------------\n");
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
+    ui -> textBrowser -> setTextColor(QColor(255, 255, 255));
+    ui -> textBrowser -> insertPlainText("----------------------------------------------------------------------------------\n");
     ui -> textBrowser -> insertPlainText("Доступні для підключення порти:\n");
 
     foreach(const QSerialPortInfo &info, QSerialPortInfo::availablePorts() ){
@@ -106,6 +124,8 @@ void MainWindow::auto_scroll_down(void){
 
 void MainWindow::on_pushButton_clicked()            // підключити/відключити com port
 {
+
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
         if (!status_connect_com){
             //qDebug() << "Порт вільний, підключаюсь";
             serial = new QSerialPort (this);
@@ -115,7 +135,9 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
             serial -> setParity(QSerialPort::NoParity);
             serial -> setStopBits(QSerialPort::OneStop);
             serial -> setFlowControl(QSerialPort::NoFlowControl);
-            serial->setReadBufferSize(1024);
+            serial -> setReadBufferSize(1024);
+
+
 
             if (serial -> open(QIODevice::ReadWrite) ){    // відкриваєм порт або перевіряєм його зайнятість
                 //qDebug() << "Під'єднано";
@@ -175,39 +197,47 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
 //----------- WI-FI and update FW ----------------
 void MainWindow::on_pushButton_10_clicked()
 {
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     QString ssid = ui->lineEdit->text();
     QString pass = ui->lineEdit_2->text();
     QByteArray ba = "wifi client connect ";
     ba.append(ssid + " " + pass + ";");
     serial -> write(ba);
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
-    ui -> textBrowser -> insertPlainText("\n-->> wifi client connect "+ ssid + " " + pass + ";\n");
+    ui -> textBrowser -> insertPlainText("-->> wifi client connect "+ ssid + " " + pass + ";\n");
 }
 
 void MainWindow::on_pushButton_19_clicked()
 {
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     serial -> write("wifi client disconnect;");
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
-    ui -> textBrowser -> insertPlainText("\n-->> wifi client disconnect;\n");
+    ui -> textBrowser -> insertPlainText("-->> wifi client disconnect;\n");
 }
 
 void MainWindow::on_pushButton_20_clicked()
 {
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     serial -> write("update;");
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
-    ui -> textBrowser -> insertPlainText("\n-->> update;\n");
+    ui -> textBrowser -> insertPlainText("-->> update;\n");
 }
 //----------------------------------------------------
 
 
 void MainWindow::on_pushButton_22_clicked()   // write data from terminal
 {
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     QString qs = ui->lineEdit_15->text();
     QByteArray ba=0;
     ba += qs;
     serial -> write(ba);
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
-    ui -> textBrowser -> insertPlainText("\n-->> " + ba + "\n");
+    ui -> textBrowser -> insertPlainText("-->> " + ba + "\n");
     auto_scroll_down();
 }
 
@@ -215,8 +245,10 @@ void MainWindow::on_pushButton_22_clicked()   // write data from terminal
 //------------------- combo box comands --------------------------
 void MainWindow::on_comboBox_2_activated(void)
 {
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
-    ui -> textBrowser -> insertPlainText("\n-->> " + ui-> comboBox_2 -> currentText()+ "\n");
+    ui -> textBrowser -> insertPlainText("-->> " + ui-> comboBox_2 -> currentText()+ "\n");
     auto_scroll_down();
 
     switch(ui-> comboBox_2 -> currentIndex()) {
@@ -275,8 +307,10 @@ void MainWindow::on_comboBox_2_activated(void)
 //------------ read config -----------------
 void MainWindow::on_pushButton_2_clicked()
 {
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
-    ui -> textBrowser -> insertPlainText("\n-->> settings;\n");
+    ui -> textBrowser -> insertPlainText("-->> settings;\n");
     auto_scroll_down();
     serial -> write("settings;");
 }
@@ -284,6 +318,8 @@ void MainWindow::on_pushButton_2_clicked()
 //------------- restore default -------------
 void MainWindow::on_pushButton_4_clicked()
 {
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
     ui -> textBrowser -> insertPlainText("\n-->> reset settings;\n");
     auto_scroll_down();
@@ -304,10 +340,15 @@ void MainWindow::on_pushButton_3_clicked()
         ui->textBrowser->setTextColor(QColor(255,255,0));
         ui -> textBrowser -> insertPlainText("\nWriting parameters to the device.\n");
 
+        ui -> textBrowser -> insertPlainText(get_date_time ("full"));
         freq_write();
+        ui -> textBrowser -> insertPlainText(get_date_time ("full"));
         mode_write();
+        ui -> textBrowser -> insertPlainText(get_date_time ("full"));
         function_write();
+        ui -> textBrowser -> insertPlainText(get_date_time ("full"));
         rssi_treshold_write();
+        ui -> textBrowser -> insertPlainText(get_date_time ("full"));
         bit_rates_write();
     }
 }
@@ -316,8 +357,10 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_pushButton_11_clicked()
 {
+    ui -> textBrowser -> insertPlainText("\n");
+    ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
-    ui -> textBrowser -> insertPlainText("\n-->> wifi client scan;\n");
+    ui -> textBrowser -> insertPlainText("-->> wifi client scan;\n");
     auto_scroll_down();
     serial -> write("wifi client scan;");
 }

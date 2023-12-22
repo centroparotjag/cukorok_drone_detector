@@ -86,6 +86,7 @@ public:
     void bit_rates_write(void);
     QString access_point_WIFI_parser(QByteArray data);
     void auto_scroll_down(void);
+    QString  get_date_time (QString format);
 
 private:
     Ui::MainWindow *ui;
