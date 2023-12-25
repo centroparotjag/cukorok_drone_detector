@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Cukorok konfigurator"
-#define MyAppVersion "1.0.3"
+#define MyAppVersion "1.0.4"
 #define MyAppPublisher "centroparotjag@gmail.com"
 #define MyAppExeName "cukorok_dd.exe"
 #define MyAppAssocName MyAppName + " File"

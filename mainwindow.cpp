@@ -5,7 +5,7 @@
 
 int status_connect_com = 0;
 
-QString version ="V1.0.3";
+QString version ="V1.0.4";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -42,8 +42,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textBrowser->setFontPointSize(10);
     on_pushButton_5_clicked();                  // refresh com ports
 
-    //ui->textBrowser->QPixmap("/home/root/Downloads/img.jpg");
-    ui->radioButton_datim->setChecked(true);
+    //ui->radioButton_datim->setChecked(true);
+    ui->radioButton_time->setChecked(true);
+
 
 }
 
@@ -129,18 +130,24 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
         if (!status_connect_com){
             //qDebug() << "Порт вільний, підключаюсь";
             serial = new QSerialPort (this);
+            serial->setSettingsRestoredOnClose(false);
+
+            serial->close();  // close any previously open port
+
             serial -> setPortName(ui->comboBox->currentText());                // вказуєм com port для підключення з combobox
             serial -> setBaudRate(QSerialPort::Baud115200);
             serial -> setDataBits(QSerialPort::Data8);
             serial -> setParity(QSerialPort::NoParity);
             serial -> setStopBits(QSerialPort::OneStop);
             serial -> setFlowControl(QSerialPort::NoFlowControl);
+            serial -> setDataTerminalReady(false);
             serial -> setReadBufferSize(1024);
 
 
 
             if (serial -> open(QIODevice::ReadWrite) ){    // відкриваєм порт або перевіряєм його зайнятість
                 //qDebug() << "Під'єднано";
+                //qDebug() << "setDataTerminalReady" << serial->setDataTerminalReady(false);
                 ui -> pushButton   -> setText("Від'єднати");
                 ui -> groupBox ->setStyleSheet("QGroupBox {background-color:rgb(135, 223, 71);}");
                 ui -> pushButton_5 -> setEnabled(0);        // конопка оновити відключена
@@ -363,4 +370,9 @@ void MainWindow::on_pushButton_11_clicked()
     ui -> textBrowser -> insertPlainText("-->> wifi client scan;\n");
     auto_scroll_down();
     serial -> write("wifi client scan;");
+}
+
+void MainWindow::on_pushButton__Clear_log_clicked()
+{
+    ui -> textBrowser -> clear();
 }

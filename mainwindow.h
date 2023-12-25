@@ -58,6 +58,8 @@ private slots:
 
     void on_pushButton_11_clicked();
 
+    void on_pushButton__Clear_log_clicked();
+
 public:
 
     int current_mode = 2;
