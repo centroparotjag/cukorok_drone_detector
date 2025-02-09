@@ -894,9 +894,42 @@
        <string>test alarm tracking;</string>
       </property>
      </item>
+     <item>
+      <property name="text">
+       <string>log view;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>log reset;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>screensaver 1;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>screensaver 0;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>autoreturn 1;</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>autoreturn 0;</string>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -938,7 +971,7 @@
      <x>0</x>
      <y>0</y>
      <width>1150</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

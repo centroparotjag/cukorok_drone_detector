@@ -5,7 +5,7 @@
 
 int status_connect_com = 0;
 
-QString version ="V1.0.4";
+QString version ="V1.0.6";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -44,6 +44,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     //ui->radioButton_datim->setChecked(true);
     ui->radioButton_time->setChecked(true);
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------
+    ui->pushButton_4->hide();                   // приховав за вимогою розробників кнопку - "Скинути на заводські налаштування", є глюк з цим функціоналом!!!
+                                                // Є баг що скидається активація і користувачам доводиться повторно активувати через відправку кода адмінам.
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 }
@@ -103,7 +107,7 @@ void MainWindow::on_pushButton_5_clicked()      // оновити доступн
         {
             //qDebug() << "Назва - " + info.portName() + " " + info.description() + info.manufacturer();
 
-            ui -> textBrowser -> insertPlainText(info.portName() + " " + info.description() + info.manufacturer());
+            ui -> textBrowser -> insertPlainText(info.portName() + " " + info.description() + info.manufacturer() + "\n");
             ui -> comboBox -> addItem(info.portName());
         }
     }
@@ -140,12 +144,18 @@ void MainWindow::on_pushButton_clicked()            // підключити/ві
             serial -> setParity(QSerialPort::NoParity);
             serial -> setStopBits(QSerialPort::OneStop);
             serial -> setFlowControl(QSerialPort::NoFlowControl);
-            serial -> setDataTerminalReady(false);
             serial -> setReadBufferSize(1024);
 
+            serial -> setDataTerminalReady(false);
+            serial -> setRequestToSend(false);
+            serial -> setSettingsRestoredOnClose(false);
+
+
+            //serial -> ;
 
 
             if (serial -> open(QIODevice::ReadWrite) ){    // відкриваєм порт або перевіряєм його зайнятість
+                serial -> setSettingsRestoredOnClose(false);
                 //qDebug() << "Під'єднано";
                 //qDebug() << "setDataTerminalReady" << serial->setDataTerminalReady(false);
                 ui -> pushButton   -> setText("Від'єднати");
@@ -307,6 +317,24 @@ void MainWindow::on_comboBox_2_activated(void)
       case 15:
        serial -> write("test alarm tracking;");
        break;
+      case 16:
+        serial -> write("log view;");
+        break;
+      case 17:
+        serial -> write("log reset;");
+        break;
+      case 18:
+        serial -> write("screensaver 1;");
+        break;
+      case 19:
+        serial -> write("screensaver 0;");
+        break;
+      case 20:
+        serial -> write("autoreturn 1;");
+        break;
+      case 21:
+        serial -> write("autoreturn 0;");
+       break;
     }
 }
 
@@ -330,7 +358,7 @@ void MainWindow::on_pushButton_4_clicked()
     ui->textBrowser->setTextColor(QColor(255, 125, 125));
     ui -> textBrowser -> insertPlainText("\n-->> reset settings;\n");
     auto_scroll_down();
-    serial -> write("reset settings;");
+    serial -> write("reset settings;"); // Небезпечно!!!! Є баг що скидається активація і користувачам доводиться повторно активувати через відправку кода адмінам.
 }
 
 void MainWindow::on_pushButton_3_clicked()
