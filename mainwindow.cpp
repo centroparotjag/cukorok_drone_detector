@@ -5,7 +5,7 @@
 
 int status_connect_com = 0;
 
-QString version ="V1.0.6";
+QString version ="V1.0.7";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -30,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui -> textBrowser -> insertPlainText("Сайт розробника дрон детектора:\nhttps://drone-spices.com/index.html\nhttps://bit.ly/dsc042\n");
     ui->textBrowser->setTextColor(QColor(255, 255, 0));
     ui -> textBrowser -> insertPlainText("\nЗауваження і пропозиції по конфігуратору надсилайте за цією адресою: centroparotjag@gmail.com\n");
+    ui->textBrowser->setTextColor(QColor(255, 0, 0));
+    ui -> textBrowser -> insertPlainText("\nЯкщо цукорок не відповідає на команди, вимкніть голосовий модуль (якщо такий у вас є)!\n");
 
     ui -> pushButton -> setText("З'єднати");
     //ui -> comboBox_2 -> setEnabled(0);        // відключений
