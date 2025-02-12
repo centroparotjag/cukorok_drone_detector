@@ -24,12 +24,16 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->textBrowser->setStyleSheet("QtextBrowser { background-color: rgb(4,13,135) }");
 
 
+
+
     ui->textBrowser->setFontPointSize(10);
     ui -> textBrowser -> insertPlainText(get_date_time ("full"));
     ui->textBrowser->setTextColor(QColor(255, 255, 0));
-    ui -> textBrowser -> insertPlainText("Сайт розробника дрон детектора:\nhttps://drone-spices.com/index.html\nhttps://bit.ly/dsc042\n");
+    ui -> textBrowser -> insertPlainText("Зроблено на основі цього ресурсу: https://monitor.vanilka.com.ua/\n");
+    ui -> textBrowser -> insertPlainText("https://drone-spices.com/index.html\n");
+    ui -> textBrowser -> insertPlainText("https://vanilka.com.ua/\n");
     ui->textBrowser->setTextColor(QColor(255, 255, 0));
-    ui -> textBrowser -> insertPlainText("\nЗауваження і пропозиції по конфігуратору надсилайте за цією адресою: centroparotjag@gmail.com\n");
+    ui -> textBrowser -> insertPlainText("Зауваження і пропозиції по конфігуратору надсилайте за адресою: centroparotjag@gmail.com\n");
     ui->textBrowser->setTextColor(QColor(255, 0, 0));
     ui -> textBrowser -> insertPlainText("\nЯкщо цукорок не відповідає на команди, вимкніть голосовий модуль (якщо такий у вас є)!\n");
 
