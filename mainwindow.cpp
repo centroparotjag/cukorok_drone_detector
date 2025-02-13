@@ -5,7 +5,7 @@
 
 int status_connect_com = 0;
 
-QString version ="V1.0.7";
+QString version ="V1.0.8";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -28,15 +28,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->textBrowser->setFontPointSize(10);
     ui -> textBrowser -> insertPlainText(get_date_time ("full"));
+    //--------------------------- Legend --------------------------------------
     ui->textBrowser->setTextColor(QColor(255, 255, 0));
-    ui -> textBrowser -> insertPlainText("Зроблено на основі цього ресурсу: https://monitor.vanilka.com.ua/\n");
+    ui -> textBrowser -> insertPlainText("Ресурси:\n");
     ui -> textBrowser -> insertPlainText("https://drone-spices.com/index.html\n");
-    ui -> textBrowser -> insertPlainText("https://vanilka.com.ua/\n");
+    ui -> textBrowser -> insertPlainText("https://vanilka.com.ua/\n\n");
+    ui -> textBrowser -> insertPlainText("Web аналог:\nhttps://monitor.vanilka.com.ua/\n\n");
+    ui -> textBrowser -> insertPlainText("Інструкція:\nhttps://docs.google.com/document/d/1i-dVdMa8PW__87ykt4xidixNP5UHANwGJ1JUw7cvI9o/edit?tab=t.0\n\n");
     ui->textBrowser->setTextColor(QColor(255, 255, 0));
-    ui -> textBrowser -> insertPlainText("Зауваження і пропозиції по конфігуратору надсилайте за адресою: centroparotjag@gmail.com\n");
+    ui -> textBrowser -> insertPlainText("Оновлення:\nhttps://github.com/centroparotjag/cukorok_drone_detector\n\n");
+    ui -> textBrowser -> insertPlainText("Зауваження і пропозиції:centroparotjag@gmail.com\n\n");
     ui->textBrowser->setTextColor(QColor(255, 0, 0));
-    ui -> textBrowser -> insertPlainText("\nЯкщо цукорок не відповідає на команди, вимкніть голосовий модуль (якщо такий у вас є)!\n");
-
+    ui -> textBrowser -> insertPlainText("Якщо цукорок не відповідає на команди, вимкніть голосовий модуль (якщо такий у вас є)!\n");
+    //--------------------------------------------------------------------------
     ui -> pushButton -> setText("З'єднати");
     //ui -> comboBox_2 -> setEnabled(0);        // відключений
     ui -> groupBox_2 -> setEnabled(0);          // відключений
